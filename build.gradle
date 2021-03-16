@@ -15,6 +15,9 @@ repositories {
 	maven {
 	        url = 'https://files.minecraftforge.net/maven'
 	}
+	maven {
+	url 'https://repo.spongepowered.org/maven'
+	}
 }
 
 
