@@ -1,3 +1,9 @@
+buildscript{
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.spongepowered.mixin'
+}
 repositories {
 	mavenCentral()
 	jcenter()
@@ -11,11 +17,7 @@ repositories {
 	        url = 'https://files.minecraftforge.net/maven'
 	}
 }
-plugins {
-	id 'java'
-	id 'maven-publish'
-	id 'org.spongepowered.mixin'
-}
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -44,4 +46,5 @@ sourceSets {
     debug {
         compileClasspath += main.compileClasspath
     }
+}
 }
