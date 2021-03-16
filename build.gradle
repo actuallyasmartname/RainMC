@@ -1,9 +1,4 @@
 buildscript{
-plugins {
-	id 'java'
-	id 'maven-publish'
-	id 'org.spongepowered.mixin'
-}
 repositories {
 	mavenCentral()
 	jcenter()
@@ -16,6 +11,11 @@ repositories {
 	maven {
 	        url = 'https://files.minecraftforge.net/maven'
 	}
+}
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.spongepowered.mixin'
 }
 
 
