@@ -19,7 +19,6 @@ repositories {
 	url 'https://repo.spongepowered.org/maven'
 	}
 }
-apply plugin: 'org.spongepowered.mixin'
 
 
 sourceCompatibility = 1.8
@@ -29,6 +28,7 @@ archivesBaseName = "RainMC"
 
 
 dependencies {
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
         classpath 'net.minecraftforge.gradle:ForgeGradle:4.1.+'
 	minecraft "com.mojang:minecraft:1.16.5"
 	mappings "net.fabricmc:yarn:1.16.5+build.5:v2"
@@ -45,6 +45,7 @@ dependencies {
 
 
 }
+apply plugin: 'org.spongepowered.mixin'
 sourceSets {
     main
     debug {
