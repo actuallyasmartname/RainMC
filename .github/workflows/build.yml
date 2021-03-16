@@ -33,3 +33,5 @@ jobs:
         with:
           name: Artifacts
           path: build/libs/
+      - name: test
+       run: ./gradlew test
