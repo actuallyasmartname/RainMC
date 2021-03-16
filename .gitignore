@@ -23,3 +23,8 @@
 hs_err_pid*
 # other
 .gradle
+.vscode
+build
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs

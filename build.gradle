@@ -1,0 +1,41 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id("fabric-loom") version "0.6-SNAPSHOT"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+archivesBaseName = "RainMC"
+
+repositories {
+	mavenCentral()
+	jcenter()
+	maven {
+		url = 'https://maven.fabricmc.net/'
+	}
+	maven {
+		url = 'https://libraries.minecraft.net/'
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:1.16.5"
+	mappings "net.fabricmc:yarn:1.16.5+build.5:v2"
+
+	implementation 'net.fabricmc:tiny-mappings-parser:0.2.2.14'
+	implementation 'net.fabricmc:tiny-remapper:0.3.0.70'
+
+	implementation ('net.minecraft:launchwrapper:1.12') {transitive = false}
+
+
+
+
+}
+
+tasks.withType(JavaCompile).configureEach {
+	if (JavaVersion.current().isJava9Compatible()) {
+		it.options.release = 8
+	}
+}
