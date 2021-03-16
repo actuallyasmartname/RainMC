@@ -47,4 +47,3 @@ sourceSets {
         compileClasspath += main.compileClasspath
     }
 }
-}
