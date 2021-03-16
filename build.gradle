@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'maven-publish'
 	id 'org.spongepowered.plugin' version '0.8.1'
+	id("fabric-loom") version "0.5-SNAPSHOT"
 }
 repositories {
 	mavenCentral()
@@ -10,10 +11,8 @@ repositories {
 		url = 'https://maven.fabricmc.net/'
 	}
 	maven {
+		name = 'mojang'
 		url = 'https://libraries.minecraft.net/'
-	}
-	maven {
-	        url = 'https://files.minecraftforge.net/maven'
 	}
 	maven {
 	url 'https://repo.spongepowered.org/maven'
@@ -28,16 +27,25 @@ archivesBaseName = "RainMC"
 
 
 dependencies {
-        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
-        classpath 'net.minecraftforge.gradle:ForgeGradle:4.1.+'
-	minecraft "com.mojang:minecraft:1.16.5"
-	mappings "net.fabricmc:yarn:1.16.5+build.5:v2"
-	classpath 'org.spongepowered:mixingradle:0.5-SNAPSHOT'
+    implementation 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
+	implementation 'org.spongepowered:mixin:0.8.2'
+    implementation 'net.minecraftforge.gradle:ForgeGradle:4.1.+'
+	minecraft 'com.mojang:minecraft:1.16.5'
+	 mappings "net.fabricmc:yarn:1.16.5+build.5:v2"
 
 	implementation 'net.fabricmc:tiny-mappings-parser:0.2.2.14'
 	implementation 'net.fabricmc:tiny-remapper:0.3.0.70'
-	implementation 'org.ow2.asm:asm:6.2'
-        implementation 'org.ow2.asm:asm-commons:6.2'
+	implementation "org.ow2.asm:asm:9.1"
+	implementation "org.ow2.asm:asm-analysis:9.1"
+	implementation "org.ow2.asm:asm-commons:9.1"
+	implementation "org.ow2.asm:asm-tree:9.1"
+	implementation "org.ow2.asm:asm-util:9.1"
+	annotationProcessor "org.ow2.asm:asm:9.1"
+	annotationProcessor "org.ow2.asm:asm-analysis:9.1"
+	annotationProcessor "org.ow2.asm:asm-commons:9.1"
+	annotationProcessor "org.ow2.asm:asm-tree:9.1"
+	annotationProcessor "org.ow2.asm:asm-util:9.1"
+
 
 	implementation ('net.minecraft:launchwrapper:1.12') {transitive = false}
 
@@ -45,7 +53,6 @@ dependencies {
 
 
 }
-apply plugin: 'org.spongepowered.mixin'
 sourceSets {
     main
     debug {

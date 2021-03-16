@@ -1,9 +1,12 @@
-
 pluginManagement {
 	repositories {
 		maven {
-			url = "https://maven.fabricmc.net"
+			url = "https://rainminecraft.github.io"
 			name = "RainMC"
+		}
+		maven {
+			url = "https://maven.fabricmc.net"
+			name = "Fabric, Loom and Yarn and Remapper"
 		}
 		gradlePluginPortal()
 	}
